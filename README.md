@@ -1,4 +1,4 @@
-# TSwR-projekt
+# TSwR-project
 Projekt na przedmiot - Teoria Sterowania w Robotyce
 
 Politechnika Poznańska - 
