@@ -34,7 +34,7 @@ def display_possibilities():
 def change_state(current_dest, goal):
     if Node.allowed_transitions[0].identifier[0] == 'm':
         master['transitions']['m_' + str(current_dest) + '_' + str(goal)]._run(Node)
-        print(int(goal), master_nodes[int(goal)])
+        #print(int(goal), master_nodes[int(goal)])
         draw_graph(master_nodes[int(goal)], slave_nodes[int(0)], 1, 0)
     else:
         slave['transitions']['s_' + str(current_dest) + '_' + str(goal)]._run(Node)
