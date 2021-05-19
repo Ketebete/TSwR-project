@@ -23,13 +23,15 @@ def display_curr_state():
 
 
 def display_possibilities():
+    print("\033[1;32;1m###################################################\033[0;37;1m")
+    print("Znajdujesz się w stanie:  \033[0;31;1m" +Node.allowed_transitions[0].identifier[2] + " - " + Node.current_state.name + "\033[0;37;1m")
     bufor = []
     for i in range(len(Node.current_state.transitions)):
         x = Node.allowed_transitions[i].identifier[4]
         print("Możliwe przejścia:  \033[0;31;1m" + x + " - " + Node.states[int(x)].name + "\033[0;37;1m")
         bufor.append(x)
     bufor.append("exit")
-    print("Aktualnie stoisz w:\033[0;31;1m", Node.allowed_transitions[i].identifier[2] + "\033[0;37;1m")
+    #print("Aktualnie stoisz w:\033[0;31;1m", Node.allowed_transitions[i].identifier[2] + "\033[0;37;1m")
     return bufor, Node.allowed_transitions[i].identifier[2]
 
 
@@ -43,7 +45,6 @@ def change_state(current_dest, goal):
 if __name__ == '__main__':
     machines_setup()
     while True:
-        display_curr_state()
         bufor, current_dest = display_possibilities()
         inp = input("Podaj nastepny stan z wyswietlonych: ")
         while inp not in bufor:
